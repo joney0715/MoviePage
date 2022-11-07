@@ -1,3 +1,9 @@
 /venv
 
 my_settings.py
+
+/__pycache__
+
+/movies/__pycache__
+
+/movie_project/__pycache__
