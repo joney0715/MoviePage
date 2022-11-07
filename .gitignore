@@ -2,6 +2,9 @@
 
 my_settings.py
 
+__pycache__/
+*.py[cod]
+
 /__pycache__
 
 /movies/__pycache__
