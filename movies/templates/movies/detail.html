@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>DETAIL</h1>
+  <hr>
+    <div class="d-flex">
+      <div class="mx-3">
+        <img src="{{ movie.poster_url }}" alt="poster">
+      </div>
+      <div class="mx-3">
+        <h3>{{ movie.title }}</h3>
+        <p>Audience: {{ movie.audience }}</p>
+        <p>Release Dates: {{ movie.release_date }}</p>
+        <p>Genre: {{ movie.genre }}</p>
+        <p>Score: {{ movie.score }}</p>
+        <p>{{ movie.description }}</p>
+      </div>      
+    </div>
+    
+  <hr>
+  <a type="button" class="btn btn-primary" href={% url 'movies:edit' movie.pk %}>EDIT</a>
+  <a type="button" class="btn btn-danger" href={% url 'movies:delete' movie.pk %} method="POST"> DELETE </a>
+  <a type="button" class="btn btn-dark" href="/movies/">back</a>
+{% endblock content %}

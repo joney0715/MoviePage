@@ -10,3 +10,5 @@ __pycache__/
 /movies/__pycache__
 
 /movie_project/__pycache__
+
+data_prepare/api_settings.py
