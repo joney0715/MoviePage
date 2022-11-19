@@ -10,13 +10,16 @@ QUERY = {
     'api_key': API_KEY,
 }
 
-number_movie = 500
+#--------------------------------------
+# movie detail
+#--------------------------------------
+number_movie = 10
 
 for id in range(1, number_movie+1):
     response = requests.get(URL+str(id), params=QUERY)
 
     if response.status_code != 404:
-        print(response.json())
+        print(response.json().get('original_title'))
 
 
 '''
@@ -29,11 +32,11 @@ for id in range(1, number_movie+1):
             'id': 18, 
             'name': 'Drama'
         }, 
-            {
-                'id': 80, 
-                'name': 'Crime'
-            }
-        ], 
+        {
+            'id': 80, 
+            'name': 'Crime'
+        }
+    ], 
     'homepage': '', 
     'id': 16, 
     'imdb_id': 'tt0168629', 
@@ -95,5 +98,42 @@ for id in range(1, number_movie+1):
     'video': False, 
     'vote_average': 7.885, 
     'vote_count': 1472
+}
+'''
+
+
+#--------------------------------------
+# genre
+#--------------------------------------
+# url_genre = 'https://api.themoviedb.org/3/genre/movie/list'
+# response_genre = requests.get(url_genre, params=QUERY)
+# if response_genre.status_code != 404:
+#     print(response_genre.json())
+
+
+'''
+{
+    'genres': [
+        {'id': 28, 'name': 'Action'}, 
+        {'id': 12, 'name': 'Adventure'}, 
+        {'id': 16, 'name': 'Animation'}, 
+        {'id': 35, 'name': 'Comedy'}, 
+        {'id': 80, 'name': 'Crime'}, 
+        {'id': 99, 'name': 'Documentary'}, 
+        {'id': 18, 'name': 'Drama'}, 
+        {'id': 10751, 'name': 'Family'},  
+        {'id': 36, 'name': 'History'},
+        {'id': 14, 'name': 'Fantasy'}, 
+        {'id': 36, 'name': 'History'}, 
+        {'id': 27, 'name': 'Horror'}, 
+        {'id': 10402, 'name': 'Music'}, 
+        {'id': 9648, 'name': 'Mystery'}, 
+        {'id': 10749, 'name': 'Romance'}, 
+        {'id': 878, 'name': 'Science Fiction'}, 
+        {'id': 10770, 'name': 'TV Movie'}, 
+        {'id': 53, 'name': 'Thriller'}, 
+        {'id': 10752, 'name': 'War'}, 
+        {'id': 37, 'name': 'Western'}
+    ]
 }
 '''

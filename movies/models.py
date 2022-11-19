@@ -1,6 +1,7 @@
 from django.db import models
 
 class Movie(models.Model):
+    movie_id = models.IntegerField()
     title = models.CharField(max_length=20)
     audience = models.IntegerField()
     release_date = models.DateField()
@@ -8,3 +9,5 @@ class Movie(models.Model):
     score = models.FloatField()
     poster_url = models.TextField()
     description = models.TextField()
+    runtime = models.IntegerField()
+    tagline = models.TextField()
